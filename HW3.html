@@ -82,6 +82,8 @@
             var alpha = event.alpha;
             var gamma = event.gamma;
             var beta = event.beta;
+
+            camera.rotation.set(THREE.MathUtils.degToRad(gamma), THREE.MathUtils.degToRad(alpha),0, 'YXZ')
             
        }
         function animate(t){
