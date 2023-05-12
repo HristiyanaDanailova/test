@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>HW3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="three.min.js"></script>
+    <script src="vax.js"></script>
+</head>
+<body>
+    <script>
+        function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+        vaxInit();
+        var geometryBox = new THREE.BoxGeometry(50,50,50);
+        var materialBox = new THREE.MeshLambertMaterial({color:'lightblue',side: THREE.DoubleSide});
+        var box = new THREE.Mesh(geometryBox,materialBox);
+        camera.position.set(0,0,0);
+        camera.lookAt( new THREE.Vector3(0,10,25) );
+        light.position.set(0,0,0);
+        scene.add(box);
+
+        var coneGeometry = new THREE.ConeGeometry(1,5);
+        for (var i = 0; i <= 100;i++){
+        var coneMaterial = new THREE.MeshLambertMaterial({color:'blue'});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(24,getRandomArbitrary(0, 25),getRandomArbitrary(-25, 25)  );
+        cone.material.color.setRGB(getRandomArbitrary(0,1),getRandomArbitrary(0,1),getRandomArbitrary(0,1)); 
+        scene.add(cone);
+       }
+       for (var i = 0; i <= 100;i++){
+        var coneMaterial = new THREE.MeshLambertMaterial({color:'blue'});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(24,getRandomArbitrary(-25, 25),getRandomArbitrary(-25, 25)  );
+        cone.material.color.setRGB(getRandomArbitrary(0,1),getRandomArbitrary(0,1),getRandomArbitrary(0,1)); 
+        scene.add(cone);
+       }
+       for (var i = 0; i <= 100;i++){
+        var coneMaterial = new THREE.MeshLambertMaterial({color:'blue'});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(-24,getRandomArbitrary(-25, 25),getRandomArbitrary(-25, 25)  );
+        cone.material.color.setRGB(getRandomArbitrary(0,1),getRandomArbitrary(0,1),getRandomArbitrary(0,1)); 
+        scene.add(cone);
+       }
+       for (var i = 0; i <= 100;i++){
+        var coneMaterial = new THREE.MeshLambertMaterial({color:'blue'});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(getRandomArbitrary(-25, 25) ,getRandomArbitrary(-25, 25),24 );
+        cone.material.color.setRGB(getRandomArbitrary(0,1),getRandomArbitrary(0,1),getRandomArbitrary(0,1)); 
+        scene.add(cone);
+       }
+       for (var i = 0; i <= 100;i++){
+        var coneMaterial = new THREE.MeshLambertMaterial({color:'blue'});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(getRandomArbitrary(-25, 25) ,getRandomArbitrary(-25, 25),-24 );
+        cone.material.color.setRGB(getRandomArbitrary(0,1),getRandomArbitrary(0,1),getRandomArbitrary(0,1)); 
+        scene.add(cone);
+       }
+       for (var i = 0; i <= 100;i++){
+        var coneMaterial = new THREE.MeshLambertMaterial({color:'blue'});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(getRandomArbitrary(-25, 25) ,-24,getRandomArbitrary(-25, 25) );
+        cone.material.color.setRGB(getRandomArbitrary(0,1),getRandomArbitrary(0,1),getRandomArbitrary(0,1)); 
+        scene.add(cone);
+       }
+       for (var i = 0; i <= 100;i++){
+        var coneMaterial = new THREE.MeshLambertMaterial({color:'blue'});
+        var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+        cone.position.set(getRandomArbitrary(-25, 25) ,25,getRandomArbitrary(-25, 25) );
+        cone.material.color.setRGB(getRandomArbitrary(0,1),getRandomArbitrary(0,1),getRandomArbitrary(0,1)); 
+        scene.add(cone);
+       }
+       function degToRad(degrees){
+        var pi = Math.PI;
+        return degrees * (pi/180);
+        }
+       window.addEventListener('devicemotion',deviceOrientation,true);
+       function deviceOrientation(event){
+            var alpha = event.alpha;
+            var gamma = event.gamma;
+            var beta = event.beta;
+            
+       }
+        function animate(t){
+            
+          // camera.rotation.set(t/4,t/4,0);
+        }
+    </script>
+</body>
+</html>
